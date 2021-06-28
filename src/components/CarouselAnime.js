@@ -25,7 +25,9 @@ function CarouselAnime({anime}) {
                                 </Carousel.Caption> */}
                             </Carousel.Item>  
                 )
-            })}
+            }
+            )
+            }
             </Carousel>
         </div>
     )
