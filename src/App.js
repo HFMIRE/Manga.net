@@ -1,12 +1,12 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Datafetching  from "./components/Datafetching"
-import NavBar from "./components/NavBar"
+import Navbar from "./Navbar"
+import HeroBox from "./HeroBox"
+
 function App() {
     return ( 
       <div className = "App" >
-    <NavBar /> 
-    <Datafetching/>
+        < Navbar />
+        < HeroBox />
         </div>
     );
 }
