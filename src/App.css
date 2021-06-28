@@ -1,39 +1,27 @@
-.App {
-  text-align: center;
+.App{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing:border-box; 
   background-color: rgb(27, 25, 25);
   color: rgb(207, 219, 230);
 }
-.navbar {
-  display: flex;
+
+.navbar{
   justify-content: space-around;
 }
-
-.carousel {
-   height: 90vh;
-   display: flex;
-   left: 120px;
-   margin-top: 10px;
-   padding: 20px;
-}
 .d-block {
-  height: 80vh;
-  width: 70vw;
-
-  border-radius: 20px;
-  justify-content: center;
-  object-fit: fill;
   box-shadow: 5px 5px 5px 5px #07070778;
-
+  margin-top: 20px;
 }
-.carouselCaption {
-  display: flex;
-  justify-content: left;
-  right: 100px; 
+
+.carousel, .d-block {
+ width: 70vw;
+ height: 90vh;
+ left: 120px;
+ border-radius: 20px;
 
 }
 .animeList {
-  padding: 30px
+  padding: 40px;
+  text-align: center;
 }
