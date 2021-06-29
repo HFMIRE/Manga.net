@@ -18,7 +18,7 @@ return (
         {anime.map(({attributes}) => {
             return (
                 <div>
-               
+                    {/* Make into a slider + modal   Add ageRating, averageRating, startDate, description -  to 200 charaters  */}
                      <Card className={classes.root}>
                     <CardActionArea>
                         <CardMedia
@@ -32,8 +32,7 @@ return (
                     </CardActionArea>
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
-                                {/* {attributes.title.en_jp} */}
-                                Hwllo
+                                {attributes.titles.en_jp}
                             </Typography>
                      </CardContent>
                     </Card>
