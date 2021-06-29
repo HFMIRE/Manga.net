@@ -1,27 +1,51 @@
-.App{
+.App {
   margin: 0;
   padding: 0;
-  box-sizing:border-box; 
-  background-color: rgb(27, 25, 25);
-  color: rgb(207, 219, 230);
+  box-sizing: border-box;
+  background-color: black;
+  color: aliceblue;
 }
 
-.navbar{
-  justify-content: space-around;
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
 }
-.d-block {
-  box-shadow: 5px 5px 5px 5px #07070778;
+.containerHero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-gap: 5px; */
+}
+.heroAnimeImage {
+  background-color: black;
+  color: aliceblue;
+}
+.containerImg {
+  margin-right: 50px;
+  margin-left: auto;
+  display: block;
+  width: 625px;
+  border-radius: 20px;
+}
+.heroDescription {
+  background-color: black;
+  color: aliceblue;
+  text-align: left;
+  justify-content: center;
+  padding: 90px;
+}
+.AnimeSlider {
+  display: inline-flex;
   margin-top: 20px;
+  /* grid-template-columns: repeat(4, 1fr); */
+}
+/* add space in the cards - i need  make space */
+.MuiCardContent-root {
+  background-color: black;
+  color: aliceblue;
 }
 
-.carousel, .d-block {
- width: 70vw;
- height: 90vh;
- left: 120px;
- border-radius: 20px;
-
-}
-.animeList {
-  padding: 40px;
-  text-align: center;
+.center {
+  height: 50%;
+  width: 50%;
 }
