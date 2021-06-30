@@ -35,17 +35,55 @@
   padding: 90px;
 }
 .AnimeSlider {
-  display: inline-flex;
   margin-top: 20px;
+  padding: 20px;
+  /* border-color: white; */
+  gap: 5px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   /* grid-template-columns: repeat(4, 1fr); */
 }
 /* add space in the cards - i need  make space */
 .MuiCardContent-root {
-  background-color: black;
+  background-color: #130f13;
   color: aliceblue;
 }
 
 .center {
   height: 50%;
   width: 50%;
+}
+.description {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+/* .avgRating {
+  text-align: center;
+  background-color: #5f4886;
+  border-radius: 5px;
+  height: 25px;
+  width: 35px;
+}
+.ageR {
+  text-align: center;
+  background-color: #5f4886;
+  border-radius: 5px;
+  height: 25px;
+  width: 50px;
+}
+.date {
+  text-align: center;
+  background-color: #5f4886;
+  border-radius: 5px;
+  height: 25px;
+  width: 50px;
+} */
+
+.bullet {
+  font-size: 45px;
+  color: #6874e8;
+  margin-top: -30px;
+  padding: 10px;
 }

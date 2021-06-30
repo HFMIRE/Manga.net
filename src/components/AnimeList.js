@@ -5,20 +5,14 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
   },
 });
-function AnimeList({
-  key,
-  img,
-  title,
-  description,
-  ageRating,
-  avg,
-  startdate,
-}) {
+
+function AnimeList({ img, title, ageRating, avg, startdate }) {
   const classes = useStyles();
   return (
     <div className="AnimeSlider">
@@ -33,20 +27,34 @@ function AnimeList({
             image={img}
             title="Anime Image"
           />
+          {/* title - year + age rating + rating  */}
         </CardActionArea>
         <CardContent className="CardDescription">
-          <Typography gutterBottom variant="h5" component="h2">
-            {title}
-          </Typography>
-          <Typography gutterBottom variant="h5" component="h2">
-            {avg}
-          </Typography>
-          <Typography gutterBottom variant="h5" component="h2">
-            {ageRating}
-          </Typography>
-          <Typography gutterBottom variant="h5" component="h2">
-            {startdate}
-          </Typography>
+          <div class="description">
+            <Typography
+              className="ageR"
+              gutterBottom
+              variant="body1"
+              component="h2"
+            >
+              🔥
+              {Math.floor(avg)}
+            </Typography>
+            <span className="bullet"> • </span>
+            <Typography
+              className="avgRating"
+              gutterBottom
+              variant="body1"
+              component="h2"
+            >
+              {ageRating}
+            </Typography>
+            <span className="bullet"> • </span>
+            <Typography className="date" gutterBottom variant="body1">
+              {startdate.slice(0, 4)}
+            </Typography>
+          </div>
+          <Typography component="h3">{title}</Typography>
         </CardContent>
       </Card>
     </div>
