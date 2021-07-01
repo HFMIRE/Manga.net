@@ -53,37 +53,64 @@
   height: 50%;
   width: 50%;
 }
-.description {
+.description,
+.Modaldescription {
   display: flex;
-  justify-content: space-around;
+  justify-content: left;
   text-align: center;
+  gap: 15px;
 }
 
-/* .avgRating {
+.avgRating {
   text-align: center;
-  background-color: #5f4886;
+  background-color: #f4841a;
   border-radius: 5px;
   height: 25px;
-  width: 35px;
+  width: 45px;
 }
 .ageR {
   text-align: center;
-  background-color: #5f4886;
+  background-color: #06707e;
   border-radius: 5px;
   height: 25px;
-  width: 50px;
+  width: 60px;
 }
 .date {
   text-align: center;
-  background-color: #5f4886;
+  background-color: #cf6065;
   border-radius: 5px;
   height: 25px;
-  width: 50px;
-} */
+  width: 60px;
+}
 
-.bullet {
-  font-size: 45px;
-  color: #6874e8;
-  margin-top: -30px;
-  padding: 10px;
+.title {
+  padding-top: 20px;
+}
+
+.Modaldescription {
+  padding: 20px;
+}
+#btnModal {
+  background-color: transparent;
+  border-style: none;
+  float: right;
+}
+
+.btnModal2 {
+  color: white;
+  margin-top: 20px;
+  font-size: 15px;
+  height: 30px;
+  background-color: #377375;
+  border-color: #377375;
+  border-radius: 5px;
+}
+
+.titleAnime {
+  font-size: 16px;
+}
+
+.TopTitle {
+  margin: 20px;
+  font-size: 38px;
 }

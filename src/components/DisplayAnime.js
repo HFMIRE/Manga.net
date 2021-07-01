@@ -28,7 +28,6 @@ function DisplayAnime({ anime }) {
         {anime.map(({ attributes }, index) => {
           return (
             <CarouselAnime
-              anime={anime}
               key={index}
               img={attributes.posterImage.large}
               title={attributes.titles.en_jp}
@@ -38,7 +37,7 @@ function DisplayAnime({ anime }) {
           );
         })}
       </Carousel>
-      <h1>Anime</h1>
+      <h1 className="TopTitle">Anime</h1>
       <CarouselM
         responsive={responsive}
         ssr
@@ -60,7 +59,6 @@ function DisplayAnime({ anime }) {
           );
         })}
       </CarouselM>
-      <h2>Hello</h2>
     </div>
   );
 }

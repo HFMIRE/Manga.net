@@ -1,7 +1,7 @@
 import React from "react";
 import { Paper, Button } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-function CarouselAnime({ key, img, title, description, titleJp }) {
+function CarouselAnime({ img, title, description, titleJp }) {
   return (
     <Paper className="containerHero" elevation={0}>
       <div className="heroDescription">
@@ -17,7 +17,7 @@ function CarouselAnime({ key, img, title, description, titleJp }) {
         <Button className="CheckButton">Check it out!</Button>
       </div>
       <div className="heroAnimeImage">
-        <img className="containerImg" key={key} src={img} alt="First slide" />
+        <img className="containerImg" src={img} alt="First slide" />
       </div>
     </Paper>
   );
