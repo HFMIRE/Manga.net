@@ -1,27 +1,116 @@
-.App{
+.App {
   margin: 0;
   padding: 0;
-  box-sizing:border-box; 
-  background-color: rgb(27, 25, 25);
-  color: rgb(207, 219, 230);
+  box-sizing: border-box;
+  background-color: black;
+  color: aliceblue;
 }
 
-.navbar{
-  justify-content: space-around;
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
 }
-.d-block {
-  box-shadow: 5px 5px 5px 5px #07070778;
+.containerHero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-gap: 5px; */
+}
+.heroAnimeImage {
+  background-color: black;
+  color: aliceblue;
+}
+.containerImg {
+  margin-right: 50px;
+  margin-left: auto;
+  display: block;
+  width: 625px;
+  border-radius: 20px;
+}
+.heroDescription {
+  background-color: black;
+  color: aliceblue;
+  text-align: left;
+  justify-content: center;
+  padding: 90px;
+}
+.AnimeSlider {
   margin-top: 20px;
+  padding: 20px;
+  /* border-color: white; */
+  gap: 5px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* grid-template-columns: repeat(4, 1fr); */
+}
+/* add space in the cards - i need  make space */
+.MuiCardContent-root {
+  background-color: #130f13;
+  color: aliceblue;
 }
 
-.carousel, .d-block {
- width: 70vw;
- height: 90vh;
- left: 120px;
- border-radius: 20px;
-
+.center {
+  height: 50%;
+  width: 50%;
 }
-.animeList {
-  padding: 40px;
+.description,
+.Modaldescription {
+  display: flex;
+  justify-content: left;
   text-align: center;
+  gap: 15px;
+}
+
+.avgRating {
+  text-align: center;
+  background-color: #f4841a;
+  border-radius: 5px;
+  height: 25px;
+  width: 45px;
+}
+.ageR {
+  text-align: center;
+  background-color: #06707e;
+  border-radius: 5px;
+  height: 25px;
+  width: 60px;
+}
+.date {
+  text-align: center;
+  background-color: #cf6065;
+  border-radius: 5px;
+  height: 25px;
+  width: 60px;
+}
+
+.title {
+  padding-top: 20px;
+}
+
+.Modaldescription {
+  padding: 20px;
+}
+#btnModal {
+  background-color: transparent;
+  border-style: none;
+  float: right;
+}
+
+.btnModal2 {
+  color: white;
+  margin-top: 20px;
+  font-size: 15px;
+  height: 30px;
+  background-color: #377375;
+  border-color: #377375;
+  border-radius: 5px;
+}
+
+.titleAnime {
+  font-size: 16px;
+}
+
+.TopTitle {
+  margin: 20px;
+  font-size: 38px;
 }
