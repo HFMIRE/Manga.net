@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "react-multi-carousel/lib/styles.css";
 import AnimeList from "./AnimeList";
 import CarouselAnime from "./CarouselAnime";
 import Carousel from "react-material-ui-carousel";
 import CarouselM from "react-multi-carousel";
+import axios from "axios";
+import MangaDisplay from "./MangaDisplay";
 function DisplayAnime({ anime }) {
+  const [manga, setManga] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`https://kitsu.io/api/edge/manga?page[limit]=20&page[offset]=0`)
+      .then((res) => {
+        console.log(res);
+        setManga(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -59,8 +73,9 @@ function DisplayAnime({ anime }) {
           );
         })}
       </CarouselM>
+      <h1 className="TopTitle">Manga</h1>
+      <MangaDisplay manga={manga} />
     </div>
   );
 }
-
 export default DisplayAnime;
