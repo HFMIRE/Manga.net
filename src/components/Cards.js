@@ -16,13 +16,6 @@ const BUTTON_WRAPPER_STYLES = {
   position: "relative",
   zIndex: 1,
 };
-const statusStyle = {
-  textAlign: "center",
-  backgroundColor: "#cf6065",
-  borderRadius: "5px",
-  height: " 25px",
-  width: "80px",
-};
 
 function Cards({ img, titleEn, ageRating, avg, titleJp, description, status }) {
   const classes = useStyles();
