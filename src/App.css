@@ -45,6 +45,7 @@
 }
 /* add space in the cards - i need  make space */
 .MuiCardContent-root {
+  height: 150px;
   background-color: #130f13;
   color: aliceblue;
 }
@@ -111,6 +112,10 @@
 }
 
 .TopTitle {
-  margin: 20px;
+  margin: 30px;
   font-size: 38px;
+}
+
+.Typography {
+  color: aliceblue;
 }

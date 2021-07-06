@@ -1,8 +1,7 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import DisplayAnime from "./components/DisplayAnime";
-import NavBar from "./components/NavBar";
+import DisplayAndMap from "./components/DisplayAndMap";
 function App() {
   const [anime, setAnime] = useState([]);
   useEffect(() => {
@@ -18,8 +17,8 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <NavBar />
-      <DisplayAnime anime={anime} />
+      <br></br>
+      <DisplayAndMap anime={anime} />
     </div>
   );
 }

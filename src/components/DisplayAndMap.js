@@ -5,8 +5,9 @@ import CarouselAnime from "./CarouselAnime";
 import Carousel from "react-material-ui-carousel";
 import CarouselM from "react-multi-carousel";
 import axios from "axios";
-import MangaDisplay from "./MangaDisplay";
-function DisplayAnime({ anime }) {
+import CarouselManga from "./CarouselManga";
+import Cards from "./Cards";
+function DisplayAndMap({ anime }) {
   const [manga, setManga] = useState([]);
   useEffect(() => {
     axios
@@ -44,7 +45,7 @@ function DisplayAnime({ anime }) {
             <CarouselAnime
               key={index}
               img={attributes.posterImage.large}
-              title={attributes.titles.en_jp}
+              titleEn={attributes.titles.en_jp}
               titleJp={attributes.titles.ja_jp}
               description={attributes.description}
             />
@@ -64,7 +65,8 @@ function DisplayAnime({ anime }) {
               anime={anime}
               key={index}
               img={attributes.posterImage.large}
-              title={attributes.titles.en_jp}
+              titleEn={attributes.titles.en_jp}
+              titleJp={attributes.titles.ja_jp}
               description={attributes.description}
               ageRating={attributes.ageRating}
               avg={attributes.averageRating}
@@ -74,8 +76,26 @@ function DisplayAnime({ anime }) {
         })}
       </CarouselM>
       <h1 className="TopTitle">Manga</h1>
-      <MangaDisplay manga={manga} />
+      <CarouselManga show={5}>
+        {manga.map(({ attributes }, index) => {
+          return (
+            <div className="cardManga">
+              <Cards
+                manga={manga}
+                key={index}
+                img={attributes.posterImage.large}
+                titleEn={attributes.titles.en_jp}
+                titleJp={attributes.titles.ja_jp}
+                description={attributes.description}
+                ageRating={attributes.ageRating}
+                avg={attributes.averageRating}
+                status={attributes.status}
+              />
+            </div>
+          );
+        })}
+      </CarouselManga>
     </div>
   );
 }
-export default DisplayAnime;
+export default DisplayAndMap;

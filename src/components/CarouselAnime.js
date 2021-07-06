@@ -1,12 +1,12 @@
 import React from "react";
 import { Paper, Button } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-function CarouselAnime({ img, title, description, titleJp }) {
+function CarouselAnime({ img, description, titleEn, titleJp }) {
   return (
     <Paper className="containerHero" elevation={0}>
       <div className="heroDescription">
         <Typography gutterBottom variant="h1">
-          {title}
+          {titleEn}
         </Typography>
         <Typography gutterBottom variant="h3">
           {titleJp}

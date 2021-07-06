@@ -1,47 +1,89 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
+import React, { useEffect, useState } from "react";
+import "./carousel.css";
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
-});
+const CarouselManga = (props) => {
+  const { children, show } = props;
 
-function CarouselManga({ img, title, ageRating, avg, description }) {
-  const classes = useStyles();
-  let rating = avg > 0 ? "🔥" + Math.floor(avg) : null;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [length, setLength] = useState(children.length);
+
+  const [touchPosition, setTouchPosition] = useState(null);
+
+  // Set the length to match current children from props
+  useEffect(() => {
+    setLength(children.length);
+  }, [children]);
+
+  const next = () => {
+    if (currentIndex < length - show) {
+      setCurrentIndex((prevState) => prevState + 1);
+    }
+  };
+
+  const prev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prevState) => prevState - 1);
+    }
+  };
+
+  const handleTouchStart = (e) => {
+    const touchDown = e.touches[0].clientX;
+    setTouchPosition(touchDown);
+  };
+
+  const handleTouchMove = (e) => {
+    const touchDown = touchPosition;
+
+    if (touchDown === null) {
+      return;
+    }
+
+    const currentTouch = e.touches[0].clientX;
+    const diff = touchDown - currentTouch;
+
+    if (diff > 5) {
+      next();
+    }
+
+    if (diff < -5) {
+      prev();
+    }
+
+    setTouchPosition(null);
+  };
+
   return (
-    <div>
-      <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia
-            className={classes.media}
-            image={img}
-            title="Contemplative Reptile"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {rating}
-            </Typography>
-            <Typography gutterBottom variant="h5" component="h2">
-              {ageRating}
-            </Typography>
-            <Typography gutterBottom variant="h5" component="h2">
-              {title}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
+    <div className="carousel-container">
+      <div className="carousel-wrapper">
+        {/* You can alwas change the content of the button to other things */}
+        {currentIndex > 0 && (
+          <button onClick={prev} className="left-arrow">
+            &lt;
+          </button>
+        )}
+        <div
+          className="carousel-content-wrapper"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+        >
+          <div
+            className={`carousel-content show-${show}`}
+            style={{
+              transform: `translateX(-${currentIndex * (100 / show)}%)`,
+            }}
+          >
+            {children}
+          </div>
+        </div>
+
+        {currentIndex < length - show && (
+          <button onClick={next} className="right-arrow">
+            &gt;
+          </button>
+        )}
+      </div>
     </div>
   );
-}
+};
 
 export default CarouselManga;

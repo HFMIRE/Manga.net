@@ -1,3 +1,15 @@
+.cardManga {
+  display: grid;
+  grid-auto-flow: column;
+  height: 100%;
+  width: 350px;
+  color: aliceblue;
+}
+#cardMangaImg {
+  width: 300px;
+  height: 400px;
+}
+
 .carousel-container {
   width: 100%;
   display: flex;
@@ -12,22 +24,41 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
+  gap: 5px;
 }
 .carousel-content {
   display: flex;
   transition: all 250ms linear;
-  -ms-overflow-style: none; /* hide scrollbar in IE and Edge */
-  scrollbar-width: none; /* hide scrollbar in Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-/* hide scrollbar in webkit browser */
 .carousel-content::-webkit-scrollbar,
 .carousel-content::-webkit-scrollbar {
   display: none;
 }
 .carousel-content > * {
-  width: 100%;
+  padding: 1px;
   flex-shrink: 0;
   flex-grow: 1;
+}
+.cardDescription,
+.MuiCardContent-root {
+  height: 180px;
+  background-color: #130f13;
+  color: aliceblue;
+}
+.description {
+  display: flex;
+  justify-content: left;
+  text-align: center;
+  gap: 15px;
+}
+.status {
+  text-align: center;
+  background-color: #cf6065;
+  border-radius: 5px;
+  height: 25px;
+  width: 80px;
 }
 .left-arrow,
 .right-arrow {
@@ -40,6 +71,20 @@
   border-radius: 24px;
   background-color: white;
   border: 1px solid #ddd;
+}
+.avgRatings {
+  text-align: center;
+  background-color: #f4841a;
+  border-radius: 5px;
+  height: 25px;
+  width: 65px;
+}
+.ageR {
+  text-align: center;
+  background-color: #06707e;
+  border-radius: 5px;
+  height: 25px;
+  width: 60px;
 }
 .left-arrow {
   left: 24px;
@@ -57,4 +102,19 @@
 
 .carousel-content.show-4 > * {
   width: calc(100% / 4);
+}
+#btnModal {
+  background-color: transparent;
+  border-style: none;
+  float: right;
+}
+
+.btnModal2 {
+  color: white;
+  margin-top: 20px;
+  font-size: 15px;
+  height: 30px;
+  background-color: #377375;
+  border-color: #377375;
+  border-radius: 5px;
 }

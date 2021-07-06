@@ -9,8 +9,8 @@ const MODAL_STYLES = {
   backgroundColor: "#000",
   color: "#fff",
   padding: "50px",
-  height: "500px",
-  width: "500px",
+  height: "600px",
+  width: "600px",
   zIndex: 1000,
   borderRadius: "20px",
 };

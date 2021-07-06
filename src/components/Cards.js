@@ -6,6 +6,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import Modal from "./Modal";
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -15,17 +16,17 @@ const BUTTON_WRAPPER_STYLES = {
   position: "relative",
   zIndex: 1,
 };
-function AnimeList({
-  img,
-  ageRating,
-  avg,
-  startdate,
-  description,
-  titleEn,
-  titleJp,
-}) {
-  const [isOpen, setIsOpen] = useState(false);
+const statusStyle = {
+  textAlign: "center",
+  backgroundColor: "#cf6065",
+  borderRadius: "5px",
+  height: " 25px",
+  width: "80px",
+};
+
+function Cards({ img, titleEn, ageRating, avg, titleJp, description, status }) {
   const classes = useStyles();
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="AnimeSlider">
       <Card className={classes.root}>
@@ -41,25 +42,25 @@ function AnimeList({
         </CardActionArea>
         <CardContent className="CardDescription">
           <div className="description">
+            <Typography className="status" variant="body1" component="h2">
+              {status.charAt(0).toUpperCase() + status.slice(1)}
+            </Typography>
             <Typography
               className="avgRating"
               gutterBottom
               variant="body1"
               component="h2"
             >
-              🔥
-              {Math.floor(avg)}
+              {Math.floor(avg) > 0 ? "🔥" + Math.floor(avg) : null}
             </Typography>
             <Typography
               className="ageR"
               gutterBottom
+              style={{ backgroundColor: null ? "none" : "#06707e" }}
               variant="body1"
               component="h2"
             >
-              📺 {ageRating}
-            </Typography>
-            <Typography className="date" gutterBottom variant="body1">
-              {startdate.slice(0, 4)}
+              {ageRating === null ? null : "📺" + ageRating}
             </Typography>
           </div>
           <Typography gutterBottom variant="h6" component="h2">
@@ -75,22 +76,22 @@ function AnimeList({
               <Typography className="modalTitle" variant="h3" component="h2">
                 {titleEn}
               </Typography>
-              <Typography gutterBottom variant="body1" component="h2">
+              <Typography gutterBottom variant="h6" component="h2">
                 {titleJp}
               </Typography>
               <div className="Modaldescription">
+                <Typography className="status" variant="body1" component="h2">
+                  {status.charAt(0).toUpperCase() + status.slice(1)}
+                </Typography>
                 <Typography
                   className="avgRatings"
                   variant="body1"
                   component="h2"
                 >
-                  {ageRating}
+                  {ageRating === null ? null : "📺" + ageRating}
                 </Typography>
                 <Typography className="ageR" variant="body1" component="h2">
-                  🔥{Math.floor(avg)}
-                </Typography>
-                <Typography className="status" variant="body1" component="h2">
-                  {startdate.slice(0, 4)}
+                  {Math.floor(avg) > 0 ? "🔥" + Math.floor(avg) : null}
                 </Typography>
               </div>
               <Typography variant="body1" component="h2">
@@ -103,4 +104,4 @@ function AnimeList({
     </div>
   );
 }
-export default AnimeList;
+export default Cards;
