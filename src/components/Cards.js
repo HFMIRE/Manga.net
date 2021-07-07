@@ -49,7 +49,6 @@ function Cards({ img, titleEn, ageRating, avg, titleJp, description, status }) {
             <Typography
               className="ageR"
               gutterBottom
-              style={{ backgroundColor: null ? "none" : "#06707e" }}
               variant="body1"
               component="h2"
             >
