@@ -5,8 +5,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import Modal from "./Modal";
-
+import ModalItems from "./ModalItems";
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -36,7 +35,7 @@ function Cards({ img, titleEn, ageRating, avg, titleJp, description, status }) {
         <CardContent className="CardDescription">
           <div className="description">
             <Typography className="status" variant="body1" component="h2">
-              {status.charAt(0).toUpperCase() + status.slice(1)}
+              {/* {status.charAt(0).toUpperCase() + status.slice(1)} */}
             </Typography>
             <Typography
               className="avgRating"
@@ -64,7 +63,7 @@ function Cards({ img, titleEn, ageRating, avg, titleJp, description, status }) {
               Show More
             </button>
 
-            <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+            <ModalItems open={isOpen} onClose={() => setIsOpen(false)}>
               <Typography className="modalTitle" variant="h3" component="h2">
                 {titleEn}
               </Typography>
@@ -73,7 +72,7 @@ function Cards({ img, titleEn, ageRating, avg, titleJp, description, status }) {
               </Typography>
               <div className="Modaldescription">
                 <Typography className="status" variant="body1" component="h2">
-                  {status.charAt(0).toUpperCase() + status.slice(1)}
+                  {/* {status.charAt(0).toUpperCase() + status.slice(1)} */}
                 </Typography>
                 <Typography
                   className="avgRatings"
@@ -89,7 +88,7 @@ function Cards({ img, titleEn, ageRating, avg, titleJp, description, status }) {
               <Typography variant="body1" component="h2">
                 {description}
               </Typography>
-            </Modal>
+            </ModalItems>
           </div>
         </CardContent>
       </Card>
