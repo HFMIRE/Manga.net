@@ -29,8 +29,8 @@ function Display() {
   const [manga, setManga] = useState([]);
 
   useEffect(() => {
-    const mangaUrl = `https://kitsu.io/api/edge/manga?page[limit]=20&page[offset]=0`;
-    const animeUrl = `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0`;
+    const mangaUrl = `https://kitsu.io/api/edge/manga?page[limit]=20&page[offset]=21`;
+    const animeUrl = `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=21`;
     const promise1 = axios.get(mangaUrl);
     const promise2 = axios.get(animeUrl);
     Promise.all([promise1, promise2])
